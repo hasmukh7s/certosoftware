@@ -480,6 +480,40 @@ header .navbar-nav .menu li a {
 }
 
 
+ul.flex li {
+    position: relative;
+}
+
+ul.company-dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #4335DE;
+    padding: 10px;
+    width: 200px;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+    margin-top: 35px;
+}
+
+ul.company-dropdown li {
+    padding: 10px 0;
+}
+
+ul.company-dropdown li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+ul.flex li:hover>ul.company-dropdown {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+
 /* hover  */
 
 header .navbar-nav .menu li a:before,

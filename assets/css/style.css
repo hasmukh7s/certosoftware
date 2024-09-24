@@ -437,12 +437,35 @@ button {
 header {
     padding: 24px 120px;
     background: var(--background-gradient);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 
 header .navbar-nav .signin.btn {
     background-color: #4335DE;
     color: var(--white);
     margin-left: 48px;
+    border: 1px solid #4335DE;
+}
+
+.iphone {
+    border: 1px solid var(--bg);
+}
+
+.story-section .story .iphone:hover,
+header .navbar-nav .signin.btn:hover,
+.iphone:hover {
+    background-color: transparent;
+    border: 1px solid var(--heading);
+    color: var(--heading);
+}
+
+.android:hover {
+    background-color: var(--bg);
+    border: 1px solid var(--bg);
 }
 
 header .navbar-nav .menu li {
@@ -450,7 +473,58 @@ header .navbar-nav .menu li {
 }
 
 header .navbar-nav .menu li a {
+    position: relative;
     font-weight: 700;
+    padding: 8px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* hover  */
+
+header .navbar-nav .menu li a:before,
+header .navbar-nav .menu li a:after {
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    background: var(--bg);
+    content: '';
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+header .navbar-nav .menu li a:before {
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+}
+
+header .navbar-nav .menu li a:after {
+    right: 0;
+    bottom: 0;
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+}
+
+header .navbar-nav .menu li a:hover:before,
+header .navbar-nav .menu li a:focus:before,
+header .navbar-nav .menu li a:hover:after,
+header .navbar-nav .menu li a:focus:after {
+    opacity: 1;
+}
+
+header .navbar-nav .menu li a:hover:before,
+header .navbar-nav .menu li a:focus:before {
+    left: 50%;
+    transform: rotate(0deg) translateX(-50%);
+}
+
+header .navbar-nav .menu li a:hover:after,
+header .navbar-nav .menu li a:focus:after {
+    right: 50%;
+    transform: rotate(0deg) translateX(50%);
 }
 
 
@@ -462,11 +536,12 @@ header .navbar-nav .menu li a {
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 85vh;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
 }
 
 .hero-banner .banner .left {
@@ -503,6 +578,7 @@ header .navbar-nav .menu li a {
 
 .slider-section {
     width: 100%;
+    background-color: var(--bg);
 }
 
 .slider-section .heading h2 {
@@ -1067,16 +1143,26 @@ footer .footer-main .right {
         width: 100%;
     }
 
+    .spyware-section .spyware .box {
+        padding: 26px;
+    }
+
     .iphone {
         margin-right: 0;
     }
 
     header .navbar-nav .signin.btn {
-        margin-left: 20px;
-        padding: 10px 20px;
+        margin-left: 0px;
+        padding: 10px 40px;
     }
 
+
     /* hamburger icon */
+
+    header {
+        padding: 10px 40px;
+
+    }
 
 
     header .navbar-nav .menu {
@@ -1088,8 +1174,8 @@ footer .footer-main .right {
         text-align: center;
         padding-top: 50px;
         position: absolute;
-        z-index: 9997;
-        top: 18%;
+        z-index: 999;
+        top: 78px;
         left: 0;
         right: 0;
         width: 100%;
@@ -1100,7 +1186,13 @@ footer .footer-main .right {
         transition: all 500ms ease-in-out;
     }
 
+    header .navbar-nav ul {
+        display: block;
+        text-align: center;
+    }
+
     header .navbar-nav .menu li {
+        margin: 0;
         margin-bottom: 40px;
     }
 
